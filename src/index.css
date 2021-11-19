@@ -10,6 +10,7 @@ button {
   border: black 1px solid;
   border-radius: 2em;
   cursor: pointer;
+  font-size: 2rem;
 }
 
 @media (min-width: 400px) {

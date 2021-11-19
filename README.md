@@ -1,5 +1,5 @@
 # Stopwatch
 
-# React-app with Start/Stop and Reset buttons
+React-app with Start/Stop and Reset buttons
 
 # Run
