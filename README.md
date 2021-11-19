@@ -4,4 +4,4 @@ React-app with Start/Stop and Reset buttons
 
 # Run
 
-shimanti-stopwatch.netlify.app
+https://shimanti-stopwatch.netlify.app
