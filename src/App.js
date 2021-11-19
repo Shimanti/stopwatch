@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react"
 
-function App() {
+const App = () => {
+  const [start, setStart] = useState(0)
+  const [stop, setStop] = useState(0)
+
+  const stopwatch = () => {
+    if(stop) {
+      clearInterval(stop)
+      setStop(0)
+      return
+    }
+
+    const timer = setInterval (() => {
+      setStart(prevTime => prevTime + 1)
+    }, 1000)
+
+    setStop(timer)
+  }
+
+  const reset = () => setStart(0)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main>
+      <h1>{start} seconds</h1>
+      <button onClick={stopwatch}>
+        {stop ? "Stop Timer" : "Start Timer"}
+      </button>
+      <button onClick={reset}>
+        Reset
+      </button>
+    </main>
+  )
 }
 
 export default App;
